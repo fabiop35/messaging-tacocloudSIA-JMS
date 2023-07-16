@@ -1,0 +1,45 @@
+# The values given here are actually the default values. But they are explicitly
+# set here as an example of setting the Artemis properties.
+spring:
+  jms:
+    template:
+      default-destination: queueTaco
+  artemis:
+    host: localhost
+    port: 61616
+    user: admin
+    password: admin
+    embedded:
+      enabled: false
+  data:
+    rest:
+      base-path: /data-api
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+    
+logging:
+  level:
+    tacos: WARN
+    
+taco:
+  orders:
+    pageSize: 10
+
+
+  discount:
+    codes:
+      abcdef: 10
+    
+---
+# None of these properties will actually work as configured for this profile.
+# But it is left here as an example of configuring for a production profile
+# that will override the local configuration in the default profile.
+spring:
+  profiles: production
+    
+  artemis:
+    host: artemis.tacocloud.com
+    port: 61617
+    user: tacoweb
+    password: l3tm31n

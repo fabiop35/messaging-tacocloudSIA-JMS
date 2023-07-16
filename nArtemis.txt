@@ -1,0 +1,38 @@
+#Artemis Notes
+
+Initialize/create
+bin/artemis create artemisbkr --user admin --password admin --queues queueTaco --require-login
+
+#run interactively
+"/data/data/com.termux/files/home/java/SpringInActionBook_Ed6/jms/artemisbkr/bin/artemis" run
+
+#background
+"/data/data/com.termux/files/home/java/SpringInActionBook_Ed6/jms/artemisbkr/bin/artemis-service" start
+
+#Consumer
+sh artemisbkr/bin/artemis consumer --destination queueTaco --user admin --password admin
+
+ #Producer
+sh artemisbkr/bin/artemis producer --destination queueTaco --user admin --password admin
+
+#Web Console
+http://localhost:8161/console/
+
+#Default port
+port 61616
+
+#NH
+"/opt/apache-artemis-2.29.0/artemisbroker/bin/artemis" run
+
+"/opt/apache-artemis-2.29.0/artemisbroker/bin/artemis-service" start
+
+
+
+
+
+
+
+
+
+
+
