@@ -1,0 +1,41 @@
+#Kafka
+# Start the ZooKeeper service
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# Start the Kafka broker service
+bin/kafka-server-start.sh config/server.properties
+
+#Create a topic
+bin/kafka-topics.sh --create --topic tacocloud.orders.topic --bootstrap-server localhost:9092
+
+#Write some events into thw topic
+bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+
+#Read the events
+bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
+#Purge
+--delete
+
+#Err
+Caused by: java.lang.ClassNotFoundException: com.sia.entities.TacoOrder
+Fix: rename package
+
+
+
+
+
+
+
+
+
+
+
+eper localhozt:2181 --entity-type topics --alter --entity-name tacocloud.orders.topic --add-config retention.ms=1000
+
+
+
+
+
+
+

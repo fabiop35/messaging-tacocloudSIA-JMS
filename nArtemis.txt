@@ -26,6 +26,9 @@ port 61616
 
 "/opt/apache-artemis-2.29.0/artemisbroker/bin/artemis-service" start
 
+#Purge Queue
+artemisbkr/bin/artemis queue purge --name queueTaco
+
 
 
 
